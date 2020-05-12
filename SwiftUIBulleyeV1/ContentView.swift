@@ -12,11 +12,15 @@ import SwiftUI
 //var body : 스크린 전체 나타냄
 //VStack HStack : Vertical Horizontal
 struct ContentView: View {
-    //========== Properties ==========
-    
     //Stage for User Interface view
     @State var alertIsVisible: Bool = false
     @State var sliderValue: Double = 50.0
+    @State var target: Int = Int.random(in: 1...100)
+    
+    //Properties
+    var sliderValueRounded: Int {
+        Int(self.sliderValue.rounded())
+    }
     
     var body: some View {
         VStack{
@@ -24,10 +28,10 @@ struct ContentView: View {
             //Target row
             HStack {
                 Text("Put the bull eye as close as you can do:")
-                Text("100")
+                //Text("100")
+                Text("\(self.target)")
             }
             Spacer()
-            
             //Slider row
             HStack {
                 Text("1")
@@ -35,23 +39,21 @@ struct ContentView: View {
                 Text("100")
             }
             Spacer()
-            
             //Button row
             Button(action: {
-                print("Button pressed")
+                //print("Button pressed")
+                print("Points awarded: \(self.pointsForCurrentRound())")
                 self.alertIsVisible = true
             }) {
                 Text("Hit me!")
             }
-                
             //State for alert (true -> pop_up, dismiss -> false)
             .alert(isPresented: self.$alertIsVisible) {
                 Alert( title: Text("Hello there!"),
-                       message: Text("The slider's value is \(Int(self.sliderValue.rounded()))."),
+                       message: Text(self.scoringMessage()),
                        dismissButton: .default(Text("Awesome!")) )
             } //End of .alert
             Spacer()
-            
             //Score row
             HStack {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
@@ -68,11 +70,28 @@ struct ContentView: View {
                     Text("Inform")
                 }
             }.padding(.bottom, 20)
-            
         } //End of VStack
     } //End of body
     
-    //Methods
+    //========== Methods ==========
+    func pointsForCurrentRound() -> Int {
+        var difference: Int
+        
+        if self.sliderValueRounded > self.target {
+            difference = self.sliderValueRounded - self.target
+        } else if self.sliderValueRounded < self.target {
+            difference = self.target - self.sliderValueRounded
+        } else {
+            difference = 0
+        }
+        return 100 - difference
+    }
+    
+    func scoringMessage() -> String {
+        return "The slider's value is \(self.sliderValueRounded).\n"
+                + "The target value is \(self.target).\n"
+                + "You scored \(pointsForCurrentRound()) points this round."
+    }
     
 } //End of Struct
 
