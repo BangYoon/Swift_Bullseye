@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4062FBD6246A756E00BD1DD0 /* SwiftUIBulleyeV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBulleyeV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4062FBD6246A756E00BD1DD0 /* BulleyeV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulleyeV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4062FBD9246A756E00BD1DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4062FBDB246A756E00BD1DD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4062FBDD246A756E00BD1DD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		4062FBD7246A756E00BD1DD0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4062FBD6246A756E00BD1DD0 /* SwiftUIBulleyeV1.app */,
+				4062FBD6246A756E00BD1DD0 /* BulleyeV1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +95,7 @@
 			);
 			name = SwiftUIBulleyeV1;
 			productName = SwiftUIBulleyeV1;
-			productReference = 4062FBD6246A756E00BD1DD0 /* SwiftUIBulleyeV1.app */;
+			productReference = 4062FBD6246A756E00BD1DD0 /* BulleyeV1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -298,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sogang.cse20171647.SwiftUIBulleyeV1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BulleyeV1;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sogang.cse20171647.SwiftUIBulleyeV1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BulleyeV1;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

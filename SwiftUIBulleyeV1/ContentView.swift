@@ -33,7 +33,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Spacer()
+                Spacer().navigationBarTitle(" ◎ Bullseye ◎ ")
                 //Target row
                 HStack {
                     Text("Put the bull eye as close as you can do:")
@@ -48,6 +48,7 @@ struct ContentView: View {
                         .modifier(LabelStyle())
                     Slider(value: $sliderValue, in: 1...100)
                         .accentColor(Color.green)
+                        .animation(.easeOut)
                     Text("100")
                         .modifier(LabelStyle())
                 }
